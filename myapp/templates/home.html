@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>AGROLENS</title>
+</head>
+
+<body>
+
+    <nav>
+        <div class="nav-logo">
+            <a href="#">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li class="link"><a href="#">Home</a></li>
+            <li id="link1" class="link"><a href="#">Our features</a></li>
+            <li id="link2" class="link"><a href="#">Vision and mission</a></li>
+            <li id="link3" class="link"><a href="#">Contact Us</a></li>
+        </ul>
+        <a class="btn" href="{% url 'signup_login' %}" >Sign Up</a>
+    </nav>
+
+    <header class="container">
+        <div class="content">
+            <span class="blur"></span>
+            <span class="blur"></span>
+            <h4>Manage your agricultural setting like a pro</h4>
+            <H1>Welcome to <span> Agrolens</span>, your friendly landcarer</H1>
+            <p>
+                Smart Farming Hub: Cultivate with Confidence.
+                Unlock the potential of precision agriculture with our intuitive disease detection system.
+            </p>
+            <a class="btn" href="{% url 'signup_login' %}" >Get Started</a>
+        </div>
+        <div class="image">
+            <img src="{% static 'images/header.png' %}" alt="Header">
+        </div>
+    </header>
+
+    <section class="container">
+        <h2 class="header">OUR FEATURES</h2>
+        <div class="features">
+            <div class="card">
+                <span><i class="ri-money-dollar-box-line"></i></span>
+                <h4>AI model</h4>
+                <p>
+                    Mitigation plans with our Advanced AI and ML models.
+                </p>
+                <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-bug-line"></i></span>
+                <h4>Suggestions</h4>
+                <p>
+                    Engage in good agricultural practices with our suggestions.
+                </p>
+                <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-history-line"></i></span>
+                <h4>Save time</h4>
+                <p>
+                    We encourage farmer friendly practices for early identification of diseases.
+                </p>
+                <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+            <div class="card">
+                <span><i class="ri-shake-hands-line"></i></span>
+                <h4>Save money</h4>
+                <p>
+                    With our advanced model enhance your agricultural setting and save money.
+                </p>
+                <a href="#">Join Now <i class="ri-arrow-right-line"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <h2 class="header">PROJECT VISION AND MISSION</h2>
+        <p class="sub-header">
+            Our goal to address the plant diseases persisted by our farmers and to provide a valuable solution.
+        </p>
+        <div class="pricing">
+            <div class="card">
+                <div class="content">
+                    <h4>#ENVISION 2030</h4>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        To abide by ENVISION 2030 goals.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Helps farmers expected returns.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Gain considerable crop management.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Prevent production level losses.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>#Zero Hunger</h4>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        To end the hunger by 2030.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Reduce crop losses.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Encourage people in adopting best practices.
+                    </p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h4>#Sustainable goals</h4>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Implement sustainable farming.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Enhance the agricultural setting.
+                    </p>
+                    <p>
+                        <i class="ri-checkbox-circle-line"></i>
+                        Help acheive the SDG goals.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container">
+        <span class="blur"></span>
+        <span class="blur"></span>
+        <div class="column">
+            <div class="logo">
+                <img src="{% static 'images/logo.png' %}" alt="Logo">
+            </div>
+            <p>
+                Thank you for visiting this website for joining in the journey of sustainable development goals.
+            </p>
+            <div class="socials">
+                <a href="#"><i class="ri-youtube-line"></i></a>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-line"></i></a>
+            </div>
+        </div>
+        <div class="column">
+            <h4>Company</h4>
+            <a href="#">Business</a>
+            <a href="#">Partnership</a>
+            <a href="#">Network</a>
+        </div>
+        <div class="column">
+            <h4>About Us</h4>
+            <a href="#">Blogs</a>
+            <a href="#">Channels</a>
+            <a href="#">Sponsors</a>
+        </div>
+        <div class="column">
+            <h4>Contact</h4>
+            <a href="#">Contact Us</a>
+            <a href="#">Privicy Policy</a>
+            <a href="#">Terms & Conditions</a>
+        </div>
+    </footer>
+
+    <div class="copyright">
+        Copyright © 2024 AgroLens. Submitted to University of Windsor. Advanced Database Topics.
+    </div>
+
+    <script>
+            function scrollToElement(elementSelector, instance = 0) {
+    // Select all elements that match the given selector
+    const elements = document.querySelectorAll(elementSelector);
+    // Check if there are elements matching the selector and if the requested instance exists
+    if (elements.length > instance) {
+        // Scroll to the specified instance of the element
+        elements[instance].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+const link1 = document.getElementById("link1");
+const link2 = document.getElementById("link2");
+const link3 = document.getElementById("link3");
+
+link1.addEventListener('click', () => {
+    scrollToElement('.header');
+});
+
+link2.addEventListener('click', () => {
+    // Scroll to the second element with "header" class
+    scrollToElement('.header', 1);
+});
+
+link3.addEventListener('click', () => {
+    scrollToElement('.column');
+});
+    </script>    
+</body>
+
+
+</html>

@@ -1,0 +1,133 @@
+{% load static %} <!-- Load static template tag for static files -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Image With Preview Image</title>
+    <!--<link href="{% static 'boxicons.min.css' %}" rel="stylesheet">--> <!-- Link to static boxicons.min.css file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'styles2.css' %}"><!-- Link to static style.css file -->
+
+</head>
+<body>
+        <!-- Navigation menu -->
+    <nav>
+    <ul>
+        <li><a href="{% url 'home' %}">Home</a></li>
+    </ul>
+    <ul>
+        <li><a href="{% url 'logout' %}">Logout</a></li>
+    </ul>
+    </nav>
+
+    <div class="container">
+        <h1> Please Upload Your image to know the mitigation plan</h1>
+        <form method="post" enctype="multipart/form-data" style="display: inline-block;">
+            {% csrf_token %}
+            <input type="file" id="file" name="image" accept="image/*" hidden>
+            <div class="img-area" data-img="">
+                <i class='bx bxs-cloud-upload icon'></i>
+                <h3>Upload Image</h3>
+                <p>Image size must be less than <span>2MB</span></p>
+            </div>
+            <button type="button" class="select-image">Select Image</button>
+            <button type="submit" class="upload-image select-image">Upload Image</button>
+        </form>
+    </div>
+    <script>
+        const selectImage = document.querySelector('.select-image');
+        const inputFile = document.querySelector('#file');
+        const imgArea = document.querySelector('.img-area');
+
+        selectImage.addEventListener('click', function () {
+            inputFile.click();
+        });
+
+        inputFile.addEventListener('change', function () {
+            const image = this.files[0];
+            if (image.size < 2000000) {
+                const reader = new FileReader();
+                reader.onload = ()=> {
+                    const allImg = imgArea.querySelectorAll('img');
+                    allImg.forEach(item=> item.remove());
+                    const imgUrl = reader.result;
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    imgArea.appendChild(img);
+                    imgArea.classList.add('active');
+                    imgArea.dataset.img = image.name;
+                };
+                reader.readAsDataURL(image);
+            } else {
+                alert("Image size more than 2MB");
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+<!---<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+</head>
+<body>
+   
+    <nav style="background-color: #333; padding: 10px 0; display: flex; justify-content: space-between; align-items: center;">
+        <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center;">
+            <li style="margin-right: 10px;"><a href="{% url 'home' %}" style="color: #fff; text-decoration: none;">Home</a></li>
+        </ul>
+        <ul style="list-style-type: none; margin: 0; padding: 0; display: flex; align-items: center;">
+            <li style="margin-left: 10px;"><a href="{% url 'logout' %}" style="color: #fff; text-decoration: none;">Logout</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="container" style="text-align: center; padding: 50px 0;">
+        <h1 style="font-size: 2.5em; margin-top: 100px; animation: fade-in 1s ease-in-out; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Upload Image</h1>
+        <form method="post" enctype="multipart/form-data" style="display: inline-block;">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" style="display: inline-block; padding: 15px 30px; border-radius: 5px; background-color: #fff; color: #333; font-size: 1.2em; text-transform: uppercase; letter-spacing: 2px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);transition: all 0.3s ease-in-out; margin-top: 50px;">Upload Image</button>
+        </form>
+    </div>
+
+
+    <style>
+        body {
+            background-image: url('https://source.unsplash.com/random/1600x900/?plants,nature');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</body>
+</html>-->
+
